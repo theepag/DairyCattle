@@ -33,7 +33,7 @@ public class View_Farm extends AppCompatActivity {
         rootRef = FirebaseDatabase.getInstance().getReference();
 
         //database reference pointing to demo node
-        demoRef = rootRef.child("farms");
+        demoRef = rootRef.child("name");
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +49,7 @@ public class View_Farm extends AppCompatActivity {
         fetch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                demoRef.child("name").addListenerForSingleValueEvent(new ValueEventListener() {
+                demoRef.child("value").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         String value = dataSnapshot.getValue(String.class);
