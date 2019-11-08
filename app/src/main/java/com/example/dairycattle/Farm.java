@@ -6,27 +6,28 @@ public class Farm {
     String FarmId;
     String FarmName;
     String FarmRegNo;
-    String FarmOwner;
-    String FarmDivision;
+    String FarmOwnName;
+    String FarmVetDiv;
     String FarmAddress;
-    String FarmContact;
-    String FarmCattle;
-    String FarmDairy;
+    String FarmContactNo;
+    String FarmCattleCount;
+    String FarmDairyCattleCount;
 
-    public Farm(){
+
+    public Farm() {
 
     }
 
-    public Farm(String farmId, String farmName, String farmRegNo, String farmOwner, String farmDivision, String farmAddress, String farmContact, String farmCattle, String farmDairy) {
+    public Farm(String farmId, String farmName, String farmRegNo, String farmOwnName, String farmVetDiv, String farmAddress, String farmContactNo, String farmCattleCount, String farmDairyCattleCount) {
         FarmId = farmId;
         FarmName = farmName;
         FarmRegNo = farmRegNo;
-        FarmOwner = farmOwner;
-        FarmDivision = farmDivision;
+        FarmOwnName = farmOwnName;
+        FarmVetDiv = farmVetDiv;
         FarmAddress = farmAddress;
-        FarmContact = farmContact;
-        FarmCattle = farmCattle;
-        FarmDairy = farmDairy;
+        FarmContactNo = farmContactNo;
+        FarmCattleCount = farmCattleCount;
+        FarmDairyCattleCount = farmDairyCattleCount;
     }
 
     public String getFarmId() {
@@ -41,28 +42,64 @@ public class Farm {
         return FarmRegNo;
     }
 
-    public String getFarmOwner() {
-        return FarmOwner;
+    public String getFarmOwnName() {
+        return FarmOwnName;
     }
 
-    public String getFarmDivision() {
-        return FarmDivision;
+    public String getFarmVetDiv() {
+        return FarmVetDiv;
     }
 
     public String getFarmAddress() {
         return FarmAddress;
     }
 
-    public String getFarmContact() {
-        return FarmContact;
+    public String getFarmContactNo() {
+        return FarmContactNo;
     }
 
-    public String getFarmCattle() {
-        return FarmCattle;
+    public String getFarmCattleCount() {
+        return FarmCattleCount;
     }
 
-    public String getFarmDairy() {
-        return FarmDairy;
+    public String getFarmDairyCattleCount() {
+        return FarmDairyCattleCount;
+    }
+
+    public void setFarmId(String farmId) {
+        FarmId = farmId;
+    }
+
+    public void setFarmName(String farmName) {
+        FarmName = farmName;
+    }
+
+    public void setFarmRegNo(String farmRegNo) {
+        FarmRegNo = farmRegNo;
+    }
+
+    public void setFarmOwnName(String farmOwnName) {
+        FarmOwnName = farmOwnName;
+    }
+
+    public void setFarmVetDiv(String farmVetDiv) {
+        FarmVetDiv = farmVetDiv;
+    }
+
+    public void setFarmAddress(String farmAddress) {
+        FarmAddress = farmAddress;
+    }
+
+    public void setFarmContactNo(String farmContactNo) {
+        FarmContactNo = farmContactNo;
+    }
+
+    public void setFarmCattleCount(String farmCattleCount) {
+        FarmCattleCount = farmCattleCount;
+    }
+
+    public void setFarmDairyCattleCount(String farmDairyCattleCount) {
+        FarmDairyCattleCount = farmDairyCattleCount;
     }
 }
 
