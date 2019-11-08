@@ -24,37 +24,27 @@ import java.util.List;
 public class NewPage extends AppCompatActivity {
 
     EditText editTextName;
-    Spinner spinnerGenre;
-    Button buttonAddArtist;
+    Spinner spinnerGenres;
+    Button buttonAddFarm;
 
-   DatabaseReference databaseArtists;
-   ListView ListViewArtists;
-    List<Artist> artistList;
+   DatabaseReference databaseFarms;
+   ListView ListViewFarms;
+    List<Farm> farmList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_page);
 
-        databaseArtists= FirebaseDatabase.getInstance().getReference("artists");
-
-        editTextName = (EditText) findViewById(R.id.editTextName);
-        spinnerGenre = (Spinner) findViewById(R.id.spinnerGenres);
+        databaseFarms= FirebaseDatabase.getInstance().getReference("farms");
 
 
-        buttonAddArtist = (Button) findViewById(R.id.buttonAddArtist);
-        ListViewArtists = (ListView) findViewById(R.id.listViewArtists);
 
-        artistList=new ArrayList<>();
 
-        buttonAddArtist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //calling the method addArtist()
-                //the method is defined below
-                //this method is actually performing the write operation
-                addArtist();
-            }
-        });
+
+        ListViewFarms = (ListView) findViewById(R.id.listViewFarms);
+
+        farmList=new ArrayList<>();
+
 
     }
 
@@ -62,26 +52,26 @@ public class NewPage extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        databaseArtists.addValueEventListener(new ValueEventListener() {
+        databaseFarms.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
 
 
-            artistList.clear();
+            farmList.clear();
 
                 for(
-            DataSnapshot artistSnapshot :dataSnapshot.getChildren())
+            DataSnapshot farmSnapshot :dataSnapshot.getChildren())
 
             {
-                //getting artist
-                Artist artist = artistSnapshot.getValue(Artist.class);
-                //adding artist to the list
-                artistList.add(artist);
+                //getting farm
+                Farm farm = farmSnapshot.getValue(Farm.class);
+                //adding farm to the list
+                farmList.add(farm);
             }
 
-                ArtistList adapter = new ArtistList(NewPage.this, artistList);
-                ListViewArtists.setAdapter(adapter);
+                FarmList adapter = new FarmList(NewPage.this, farmList);
+                ListViewFarms.setAdapter(adapter);
         }
 
             @Override
@@ -91,25 +81,25 @@ public class NewPage extends AppCompatActivity {
         });
     }
 
-    private void addArtist() {
+    private void addFarm() {
         //getting the values to save
         String name = editTextName.getText().toString().trim();
-        String genre = spinnerGenre.getSelectedItem().toString();
+        String genre = spinnerGenres.getSelectedItem().toString();
 
         //checking if the value is provided
         if (!TextUtils.isEmpty(name)) {
 
-            String id = databaseArtists.push().getKey();
+            String id = databaseFarms.push().getKey();
 
-            //creating an Artist Object
-            Artist artist = new Artist(id, name, genre);
-            databaseArtists.child(id).setValue(artist);
+            //creating an Farm Object
+            Farm farm = new Farm(id,name," "," "," "," "," "," ","");
+            databaseFarms.child(id).setValue(farm);
 
             //setting edittext to blank again
 
 
             //displaying a success toast
-            Toast.makeText(this, "Artist added", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Farm added", Toast.LENGTH_LONG).show();
 
 
 
