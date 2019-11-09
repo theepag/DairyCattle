@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
                 if (mFirebaseUser != null) {
                     Toast.makeText(MainActivity.this, "You are Logged in", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(MainActivity.this, NewPage.class);
+                    Intent i = new Intent(MainActivity.this, Home.class);
                     startActivity(i);
                 } else {
                     Toast.makeText(MainActivity.this, "Please Logged in", Toast.LENGTH_SHORT).show();
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                             else{
 
-                                Intent inToHome = new Intent(MainActivity.this,NewPage.class);
+                                Intent inToHome = new Intent(MainActivity.this,Home.class);
                                 startActivity(inToHome);
 
                             }

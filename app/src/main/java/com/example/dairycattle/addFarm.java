@@ -2,6 +2,7 @@ package com.example.dairycattle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -76,6 +77,9 @@ public class addFarm extends AppCompatActivity {
 
             //displaying a success toast
             Toast.makeText(this, "New Farm Added", Toast.LENGTH_LONG).show();
+            Intent intToHome = new Intent(addFarm.this, Home.class);
+            startActivity(intToHome);
+
 
 
         } else {

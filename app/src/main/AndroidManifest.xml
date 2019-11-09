@@ -14,7 +14,6 @@
         <activity android:name=".ViewFarms"></activity>
         <activity android:name=".addFarm" />
         <activity android:name=".View_Farm" />
-        <activity android:name=".NewPage" />
         <activity android:name=".Retrive" />
         <activity android:name=".Home" />
         <activity android:name=".Register" />
