@@ -51,8 +51,6 @@ public class Home extends AppCompatActivity {
         farmList=new ArrayList<>();
 
 
-
-
         buttonAddFarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +63,7 @@ public class Home extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int i, long l) {
                 Farm farm = farmList.get(i);
-                updateFarmDetail(farm.getFarmName(),farm.getFarmRegNo(),farm.getFarmOwnName(),farm.getFarmVetDiv(),farm.getFarmAddress(),farm.getFarmContactNo(),farm.getFarmCattleCount(),farm.getFarmDairyCattleCount());
+                updateFarmDetail(farm.getFarmId(),farm.getFarmName(),farm.getFarmRegNo(),farm.getFarmOwnName(),farm.getFarmVetDiv(),farm.getFarmAddress(),farm.getFarmContactNo(),farm.getFarmCattleCount(),farm.getFarmDairyCattleCount());
 
 
                 return true;
@@ -172,10 +170,9 @@ public class Home extends AppCompatActivity {
         alertDialog.show();
 
 
-
     }
 
-    private void updateFarmDetail(String Name, String RegNo, String OwnName, String VetDiv , String Address, String ContactNo, String CattleCount, String DairyCattleCount){
+    private void updateFarmDetail(final String ID, String Name, String RegNo, String OwnName, String VetDiv , String Address, String ContactNo, String CattleCount, String DairyCattleCount){
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         LayoutInflater inflater = getLayoutInflater();
@@ -193,6 +190,7 @@ public class Home extends AppCompatActivity {
         final EditText editTextCattleCount = (EditText) dialogView.findViewById(R.id.editTextCattleCount);
         final EditText editTextDairyCattleCount = (EditText) dialogView.findViewById(R.id.editTextDairyCattleCount);
         final Button btnCancell = (Button)dialogView.findViewById(R.id.buttonCancel);
+        final Button btnUpdate = (Button)dialogView.findViewById(R.id.buttonUpdate);
 
         editTextName.setText(Name);
         editTextRegNo.setText(RegNo);
@@ -202,6 +200,27 @@ public class Home extends AppCompatActivity {
         editTextCattleCount.setText(CattleCount);
         editTextDairyCattleCount.setText(DairyCattleCount);
         editTextContactNo.setText(ContactNo);
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String Name = editTextName.getText().toString().trim();
+                String RegNo = editTextRegNo.getText().toString().trim();
+                String OwnName = editTextOwnName.getText().toString().trim();
+                String VetDiv = editTextVetDiv.getText().toString().trim();
+                String Address = editTextAddress.getText().toString().trim();
+                String ContactNo = editTextContactNo.getText().toString().trim();
+                String CattleCount = editTextCattleCount.getText().toString().trim();
+                String DairyCattleCount = editTextDairyCattleCount.getText().toString().trim();
+
+
+                updateFarm(ID,Name,RegNo,OwnName,VetDiv,Address,ContactNo,CattleCount,DairyCattleCount);
+
+            }
+        });
+
+
 
         btnCancell.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -222,9 +241,24 @@ public class Home extends AppCompatActivity {
         alertDialog.show();
 
 
-
     }
 
+
+    private boolean updateFarm(String ID,String Name, String RegNo, String OwnName, String VetDiv , String Address, String ContactNo, String CattleCount, String DairyCattleCount){
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("farms").child(ID);
+        Farm farm = new Farm(ID,Name,RegNo,OwnName,VetDiv,Address,ContactNo,CattleCount, DairyCattleCount);
+        databaseReference.setValue(farm);
+        Toast.makeText(this, "Farm Updated Successfully", Toast.LENGTH_LONG).show();
+
+        Intent intToHome = new Intent(Home.this, Home.class);
+        startActivity(intToHome);
+
+
+        return true;
+
+
+    }
 
 
 
