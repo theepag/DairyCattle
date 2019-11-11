@@ -13,7 +13,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/password"
@@ -21,8 +22,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="320dp"
+        android:hint="Password"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPassword" />
 
     <TextView
         android:id="@+id/textView6"

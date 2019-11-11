@@ -51,13 +51,15 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
-
-
         };
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {  String email = emailId.getText().toString();
-                String pwd = password.getText().toString();
+            public void onClick(View view) {
+                String email = "theepagg@gmail.com";
+                String pwd = "qwerty";
+              //  String email = emailId.getText().toString();
+              // String pwd = password.getText().toString();
+
                 if(email.isEmpty()){
 
                     emailId.setError("Please enter E-mail Id");
@@ -78,15 +80,18 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 else if(!(email.isEmpty() && pwd.isEmpty())){
+
                     mFirebaseAuth.signInWithEmailAndPassword(email,pwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+
                             if(!task.isSuccessful()){
 
                                 Toast.makeText(MainActivity.this,"Login Error!,Please Login Again",Toast.LENGTH_SHORT).show();
 
                             }
                             else{
+
                                 Intent inToHome = new Intent(MainActivity.this,Home.class);
                                 startActivity(inToHome);
 
@@ -120,4 +125,6 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
+
+
 }

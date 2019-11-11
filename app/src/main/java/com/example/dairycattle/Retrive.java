@@ -1,4 +1,4 @@
-package com.example.dairycattle;
+/*package com.example.dairycattle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class Retrive extends AppCompatActivity {
 
-    ListView listView;
+    ListView listViewFarms;
     FirebaseDatabase database;
     DatabaseReference reff;
     ArrayList<String> list;
@@ -30,7 +30,7 @@ public class Retrive extends AppCompatActivity {
         setContentView(R.layout.activity_retrive);
         farm=new Farm();
 
-        listView = findViewById(R.id.listView);
+        listViewFarms = findViewById(R.id.listViewFarms);
 
         database = FirebaseDatabase.getInstance();
 
@@ -60,3 +60,4 @@ public class Retrive extends AppCompatActivity {
         });
     }
 }
+*/
