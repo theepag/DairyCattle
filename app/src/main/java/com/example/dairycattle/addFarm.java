@@ -38,7 +38,7 @@ public class addFarm extends AppCompatActivity {
         editTextFarmCattleCount = (EditText) findViewById(R.id.editTextFarmCattleCount);
         editTextFarmDairyCattleCount = (EditText) findViewById(R.id.editTextFarmDairyCattleCount);
 
-        btnAddFarm2 = (Button) findViewById(R.id.btnAddFarm2);
+        btnAddFarm2 = (Button) findViewById(R.id.btnAddCattle);
 
         btnAddFarm2.setOnClickListener(new View.OnClickListener() {
             @Override

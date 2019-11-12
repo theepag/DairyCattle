@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewFarms"></activity>
+        <activity android:name=".addCattle"></activity>
+        <activity android:name=".ViewCattles" />
+        <activity android:name=".ViewFarms" />
         <activity android:name=".addFarm" />
         <activity android:name=".View_Farm" />
         <activity android:name=".Retrive" />

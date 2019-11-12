@@ -4,7 +4,7 @@ public class Cattle {
 
 
     String CattleId;
-    String CattleFarmName;
+    String CattleFarmID;
     String CattleDateOfBirth;
     String CattleBreed;
     String CattleSpecialFeature;
@@ -13,16 +13,18 @@ public class Cattle {
     String CattleBirthWeight;
     String BreedingWeight;
     String CattleWeaningWeight;
-    String CattleCoatColour;
     String CattleAveragePreWeaningGrowthRate;
     String CattleAveragePostWeaningGrowthRate;
-    String CattleMotherTag;
-    String CattleRemark;
+
     String CattleLastCalvingDate;
 
-    public Cattle(String cattleId, String cattleFarmName, String cattleDateOfBirth, String cattleBreed, String cattleSpecialFeature, String cattleSex, String cattleNoOfLactation, String cattleBirthWeight, String breedingWeight, String cattleWeaningWeight, String cattleCoatColour, String cattleAveragePreWeaningGrowthRate, String cattleAveragePostWeaningGrowthRate, String cattleMotherTag, String cattleRemark, String cattleLastCalvingDate) {
+    public Cattle() {
+
+    }
+
+    public Cattle(String cattleId, String cattleFarmID, String cattleDateOfBirth, String cattleBreed, String cattleSpecialFeature, String cattleSex, String cattleNoOfLactation, String cattleBirthWeight, String breedingWeight, String cattleWeaningWeight, String cattleAveragePreWeaningGrowthRate, String cattleAveragePostWeaningGrowthRate, String cattleLastCalvingDate) {
         CattleId = cattleId;
-        CattleFarmName = cattleFarmName;
+        CattleFarmID = cattleFarmID;
         CattleDateOfBirth = cattleDateOfBirth;
         CattleBreed = cattleBreed;
         CattleSpecialFeature = cattleSpecialFeature;
@@ -31,11 +33,8 @@ public class Cattle {
         CattleBirthWeight = cattleBirthWeight;
         BreedingWeight = breedingWeight;
         CattleWeaningWeight = cattleWeaningWeight;
-        CattleCoatColour = cattleCoatColour;
         CattleAveragePreWeaningGrowthRate = cattleAveragePreWeaningGrowthRate;
         CattleAveragePostWeaningGrowthRate = cattleAveragePostWeaningGrowthRate;
-        CattleMotherTag = cattleMotherTag;
-        CattleRemark = cattleRemark;
         CattleLastCalvingDate = cattleLastCalvingDate;
     }
 
@@ -43,8 +42,8 @@ public class Cattle {
         return CattleId;
     }
 
-    public String getCattleFarmName() {
-        return CattleFarmName;
+    public String getCattleFarmID() {
+        return CattleFarmID;
     }
 
     public String getCattleDateOfBirth() {
@@ -79,24 +78,12 @@ public class Cattle {
         return CattleWeaningWeight;
     }
 
-    public String getCattleCoatColour() {
-        return CattleCoatColour;
-    }
-
     public String getCattleAveragePreWeaningGrowthRate() {
         return CattleAveragePreWeaningGrowthRate;
     }
 
     public String getCattleAveragePostWeaningGrowthRate() {
         return CattleAveragePostWeaningGrowthRate;
-    }
-
-    public String getCattleMotherTag() {
-        return CattleMotherTag;
-    }
-
-    public String getCattleRemark() {
-        return CattleRemark;
     }
 
     public String getCattleLastCalvingDate() {
@@ -107,8 +94,8 @@ public class Cattle {
         CattleId = cattleId;
     }
 
-    public void setCattleFarmName(String cattleFarmName) {
-        CattleFarmName = cattleFarmName;
+    public void setCattleFarmID(String cattleFarmID) {
+        CattleFarmID = cattleFarmID;
     }
 
     public void setCattleDateOfBirth(String cattleDateOfBirth) {
@@ -143,24 +130,12 @@ public class Cattle {
         CattleWeaningWeight = cattleWeaningWeight;
     }
 
-    public void setCattleCoatColour(String cattleCoatColour) {
-        CattleCoatColour = cattleCoatColour;
-    }
-
     public void setCattleAveragePreWeaningGrowthRate(String cattleAveragePreWeaningGrowthRate) {
         CattleAveragePreWeaningGrowthRate = cattleAveragePreWeaningGrowthRate;
     }
 
     public void setCattleAveragePostWeaningGrowthRate(String cattleAveragePostWeaningGrowthRate) {
         CattleAveragePostWeaningGrowthRate = cattleAveragePostWeaningGrowthRate;
-    }
-
-    public void setCattleMotherTag(String cattleMotherTag) {
-        CattleMotherTag = cattleMotherTag;
-    }
-
-    public void setCattleRemark(String cattleRemark) {
-        CattleRemark = cattleRemark;
     }
 
     public void setCattleLastCalvingDate(String cattleLastCalvingDate) {

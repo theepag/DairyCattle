@@ -7,7 +7,7 @@
     <TextView
         android:text="TextView"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:id="@+id/textViewCattleName"
+        android:id="@+id/textViewCattleBreed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

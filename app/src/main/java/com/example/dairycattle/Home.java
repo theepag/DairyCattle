@@ -30,8 +30,7 @@ import java.util.List;
 
 public class Home extends AppCompatActivity {
 
-    EditText editTextName;
-    Spinner spinnerGenres;
+
     Button buttonAddFarm,btnLogout;
 
     DatabaseReference databaseFarms;
@@ -65,8 +64,8 @@ public class Home extends AppCompatActivity {
                 Farm farm = farmList.get(i);
                 updateFarmDetail(farm.getFarmId(),farm.getFarmName(),farm.getFarmRegNo(),farm.getFarmOwnName(),farm.getFarmVetDiv(),farm.getFarmAddress(),farm.getFarmContactNo(),farm.getFarmCattleCount(),farm.getFarmDairyCattleCount());
 
-
                 return true;
+
             }
         });
 
@@ -226,7 +225,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intToHome = new Intent(Home.this, Home.class);
+                Intent intToHome = new Intent(Home.this, ViewCattles.class);
                 startActivity(intToHome);
 
 

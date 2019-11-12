@@ -6,97 +6,136 @@
     android:layout_height="match_parent"
     tools:context=".addFarm">
 
+    <EditText
+        android:id="@+id/editTextCattleBreed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Cattle Breed" />
+
 
 
     <EditText
-        android:id="@+id/editTextFarmName"
+        android:id="@+id/editTextCattleTagId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Farm Name" />
+        android:hint="Cattle Tag ID" />
 
     <EditText
-        android:id="@+id/editTextFarmRegNo"
+        android:id="@+id/editTextCattleDOB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Registration No" />
+        android:inputType="date"
+        android:hint="CattleDOB" />
 
     <EditText
-        android:id="@+id/editTextFarmOwnName"
+        android:id="@+id/editTextCattleSpeacialFeature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Owner Name" />
+        android:hint="Cattle Speacial Feature" />
 
     <EditText
-        android:id="@+id/editTextFarmVetDiv"
+        android:id="@+id/editTextCattleSex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Veterinary Division" />
+        android:hint="Cattle Sex" />
 
     <EditText
-        android:id="@+id/editTextFarmAddress"
+        android:id="@+id/editTextCattleNoOfLactation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="300dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Address" />
+        android:inputType="number"
+        android:hint="No Of Lactation" />
 
     <EditText
-        android:id="@+id/editTextFarmContactNo"
+        android:id="@+id/editTextFarmBirthWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="350dp"
         android:ems="10"
         android:inputType="number"
-        android:hint="Contact No" />
+        android:hint="Birth Weight" />
 
     <EditText
-        android:id="@+id/editTextFarmCattleCount"
+        android:id="@+id/editTextCattleBreedingWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="400dp"
         android:ems="10"
         android:inputType="number"
-        android:hint="Cattle Count" />
+        android:hint="Breeding Weight" />
 
     <EditText
-        android:id="@+id/editTextFarmDairyCattleCount"
+        android:id="@+id/editTextCattleWeaningWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="450dp"
         android:ems="10"
         android:inputType="number"
-        android:hint="Dairy Cattle Count" />
+        android:hint="Cattle Weaning Weight" />
+
+    <EditText
+        android:id="@+id/editTextCattleAveragePreWeaningGrowthRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Average Pre Weaning Growth Rate" />
+
+    <EditText
+        android:id="@+id/editTextCattleAveragePostWeaningGrowthRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="550dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Average Pre Weaning Growth Rate" />
+
+    <EditText
+        android:id="@+id/editTextCattleLastCalvingDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="600dp"
+        android:ems="10"
+        android:inputType="date"
+        android:hint="Last Calving Date" />
 
     <Button
         android:id="@+id/btnAddCattle"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="520dp"
-        android:layout_centerHorizontal="true"
-        android:text="Add Farm"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="500dp"
         android:background="#24a0ed"
-        />
+        android:text="Add Cattle" />
 
 
 

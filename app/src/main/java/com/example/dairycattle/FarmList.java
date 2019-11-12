@@ -29,8 +29,8 @@ public class FarmList extends ArrayAdapter<Farm> {
         LayoutInflater inflater = context.getLayoutInflater();
         View listViewItem = inflater.inflate(R.layout.list_layout, null, true);
 
-        TextView textViewName = listViewItem.findViewById(R.id.textViewName);
-        TextView textViewRegNo = listViewItem.findViewById(R.id.textViewRegNo);
+        TextView textViewName = listViewItem.findViewById(R.id.textViewCattleName);
+        TextView textViewRegNo = listViewItem.findViewById(R.id.textViewCattleId);
 
         Farm farm = farmList.get(position);
         textViewName.setText(farm.getFarmName());
