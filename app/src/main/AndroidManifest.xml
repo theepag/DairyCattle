@@ -11,14 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AboutUs"></activity>
+        <activity android:name=".addDisease"></activity>
+        <activity android:name=".addVaccination" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".AboutUs" />
         <activity android:name=".AboutDairyCattle" />
         <activity android:name=".View_Farm" />
         <activity android:name=".NewPage" />
         <activity android:name=".Retrive" />
         <activity android:name=".Home" />
         <activity android:name=".Register" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".addBreeding">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

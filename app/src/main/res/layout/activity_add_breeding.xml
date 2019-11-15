@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addBreeding">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+
+
+
+            <EditText
+                android:id="@+id/editTextHeatObserved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="Date Of heat sign observed" />
+
+            <EditText
+                android:id="@+id/editTextFirstAI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="Date of first artificial insemination" />
+
+            <EditText
+                android:id="@+id/editTextSecondAI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="Date of second artificial insemination" />
+
+            <EditText
+                android:id="@+id/editTextSemanId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="SemanId" />
+
+            <EditText
+                android:id="@+id/editTextVeterinarianCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="Veterination Code" />
+
+            <EditText
+                android:id="@+id/editTextDateOfPD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="Date of PD" />
+
+            <EditText
+                android:id="@+id/editTextDateOFLC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="Date of Last calving" />
+
+
+            <EditText
+                android:id="@+id/editTextNameOfTech"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Name of technician" />
+
+
+            <EditText
+                android:id="@+id/editTextNumberOfCalving"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="Number of calving" />
+
+
+            <EditText
+                android:id="@+id/editTextAINo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="AI receipt no" />
+
+
+            <Button
+                android:id="@+id/btnAddBreeding"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:layout_centerHorizontal="true"
+                android:text="Add Breeding"
+                android:background="#24a0ed"
+                />
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
