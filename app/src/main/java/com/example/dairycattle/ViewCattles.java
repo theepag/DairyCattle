@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,13 +26,56 @@ public class ViewCattles extends AppCompatActivity {
     ListView ListViewCattle;
     List<Cattle> cattleList;
     Button btnAddCattle;
+    TextView
+            FarmName, FarmRegNo,FarmOwnName,FarmVetDiv,FarmAddress,FarmContactNo,FarmCattleCount,FarmDairyCattleCount,FarmGSDiv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_cattles);
 
+        Bundle bundle = getIntent().getExtras();
+
+
+        String stuff = bundle.getString("stuff");
+        String farmName = bundle.getString("fameName");
+        String farmRegNo = bundle.getString("farmRegNo");
+        String farmOwnName = bundle.getString("farmOwnName");
+        String farmGSDiv = bundle.getString("farmGSDiv");
+        String farmAddress = bundle.getString("farmAddress");
+        String farmContactNo = bundle.getString("farmContactNo");
+        String farmCattleCount = bundle.getString("farmCattleCount");
+        String farmDairyCattleCount = bundle.getString("farmDairyCattleCount");
+
+
+        FarmName = (TextView)findViewById(R.id.FarmName);
+        FarmRegNo = (TextView)findViewById(R.id.farmRegNo);
+        FarmOwnName = (TextView)findViewById(R.id.farmOwnName);
+        FarmVetDiv= (TextView)findViewById(R.id.farmVetDiv);
+        FarmAddress = (TextView)findViewById(R.id.farmAddress);
+        FarmContactNo = (TextView)findViewById(R.id.farmContactNo);
+        FarmCattleCount = (TextView)findViewById(R.id.farmCattleCount);
+        FarmCattleCount = (TextView)findViewById(R.id.farmDairyCattleCount);
+        FarmDairyCattleCount = (TextView)findViewById(R.id.farmDairyCattleCount);
+        FarmGSDiv = (TextView)findViewById(R.id.farmGSDiv);
+
+        FarmName.setText(farmName);
+        FarmRegNo.setText(farmRegNo);
+        FarmOwnName.setText(farmOwnName);
+        FarmGSDiv.setText(farmGSDiv);
+        FarmAddress.setText(farmAddress);
+        FarmContactNo.setText(farmContactNo);
+        FarmCattleCount.setText(farmCattleCount);
+        FarmDairyCattleCount.setText(farmDairyCattleCount);
+
+
+
+
+
+
         btnAddCattle = (Button)findViewById(R.id.buttonAddCattle);
+
+
 
         databaseCattle= FirebaseDatabase.getInstance().getReference("cattle");
 
@@ -41,10 +86,17 @@ public class ViewCattles extends AppCompatActivity {
         btnAddCattle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intToAddCattle = new Intent(ViewCattles.this, addCattle.class);
+               Intent intToAddCattle = new Intent(ViewCattles.this, addCattle.class);
+                startActivity(intToAddCattle);
+
+                Bundle bundles = new Bundle();
+                String m = getSfuff();
+                bundles.putString("farmid",m);
+                intToAddCattle.putExtras(bundles);
                 startActivity(intToAddCattle);
             }
         });
+
 
 
 
@@ -58,7 +110,6 @@ public class ViewCattles extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
 
-
                 cattleList.clear();
 
                 for(
@@ -67,8 +118,15 @@ public class ViewCattles extends AppCompatActivity {
                 {
                     //getting farm
                     Cattle cattle = cattleSnapshot.getValue(Cattle.class);
+                    String k = getSfuff();
+                   if (cattle.CattleFarmID.equals(k)) {
+
+                        cattleList.add(cattle);
+
+
+                    }
                     //adding farm to the list
-                    cattleList.add(cattle);
+
                 }
 
                 CattleList adapters = new CattleList(ViewCattles.this, cattleList);
@@ -81,4 +139,14 @@ public class ViewCattles extends AppCompatActivity {
             }
         });
     }
+    public  String getSfuff() {
+        Bundle bundle = getIntent().getExtras();
+
+
+        String stuff = bundle.getString("stuff");
+        return stuff;
+
+
+    }
+
 }
