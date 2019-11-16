@@ -99,7 +99,6 @@ public class ViewFarms extends AppCompatActivity {
 
     }
 
-
     @Override
     public void onStart() {
         super.onStart();

@@ -3,7 +3,8 @@ package com.example.dairycattle;
 public class Cattle {
 
 
-    String CattleId;
+    String CattleID;
+    String CattleTAGID;
     String CattleFarmID;
     String CattleDateOfBirth;
     String CattleBreed;
@@ -22,8 +23,9 @@ public class Cattle {
 
     }
 
-    public Cattle(String cattleId, String cattleFarmID, String cattleDateOfBirth, String cattleBreed, String cattleSpecialFeature, String cattleSex, String cattleNoOfLactation, String cattleBirthWeight, String breedingWeight, String cattleWeaningWeight, String cattleAveragePreWeaningGrowthRate, String cattleAveragePostWeaningGrowthRate, String cattleLastCalvingDate) {
-        CattleId = cattleId;
+    public Cattle(String cattleID, String cattleTAGID, String cattleFarmID, String cattleDateOfBirth, String cattleBreed, String cattleSpecialFeature, String cattleSex, String cattleNoOfLactation, String cattleBirthWeight, String breedingWeight, String cattleWeaningWeight, String cattleAveragePreWeaningGrowthRate, String cattleAveragePostWeaningGrowthRate, String cattleLastCalvingDate) {
+        CattleID = cattleID;
+        CattleTAGID = cattleTAGID;
         CattleFarmID = cattleFarmID;
         CattleDateOfBirth = cattleDateOfBirth;
         CattleBreed = cattleBreed;
@@ -38,8 +40,12 @@ public class Cattle {
         CattleLastCalvingDate = cattleLastCalvingDate;
     }
 
-    public String getCattleId() {
-        return CattleId;
+    public String getCattleID() {
+        return CattleID;
+    }
+
+    public String getCattleTAGID() {
+        return CattleTAGID;
     }
 
     public String getCattleFarmID() {
@@ -90,8 +96,12 @@ public class Cattle {
         return CattleLastCalvingDate;
     }
 
-    public void setCattleId(String cattleId) {
-        CattleId = cattleId;
+    public void setCattleID(String cattleID) {
+        CattleID = cattleID;
+    }
+
+    public void setCattleTAGID(String cattleTAGID) {
+        CattleTAGID = cattleTAGID;
     }
 
     public void setCattleFarmID(String cattleFarmID) {
