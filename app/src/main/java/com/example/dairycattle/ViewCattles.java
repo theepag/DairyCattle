@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -94,6 +95,24 @@ public class ViewCattles extends AppCompatActivity {
                 bundles.putString("farmid",m);
                 intToAddCattle.putExtras(bundles);
                 startActivity(intToAddCattle);
+            }
+        });
+
+        ListViewCattle.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+
+                Cattle cattle = cattleList.get(i);
+                //  showFarmDetail(farm.getFarmName(),farm.getFarmRegNo(),farm.getFarmOwnName(),farm.getFarmVetDiv(),farm.getFarmGSDiv(),farm.getFarmAddress(),farm.getFarmContactNo(),farm.getFarmCattleCount(),farm.getFarmDairyCattleCount());
+
+                Intent intToHome = new Intent(ViewCattles.this, ViewVaccination.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("cattleID",cattle.getCattleID());
+
+                intToHome.putExtras(bundle);
+                startActivity(intToHome);
+
+
             }
         });
 
