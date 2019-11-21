@@ -105,13 +105,12 @@ public class ViewCattles extends AppCompatActivity {
                 Cattle cattle = cattleList.get(i);
                 //  showFarmDetail(farm.getFarmName(),farm.getFarmRegNo(),farm.getFarmOwnName(),farm.getFarmVetDiv(),farm.getFarmGSDiv(),farm.getFarmAddress(),farm.getFarmContactNo(),farm.getFarmCattleCount(),farm.getFarmDairyCattleCount());
 
-                Intent intToHome = new Intent(ViewCattles.this, ViewVaccination.class);
+                Intent intToCattleHome = new Intent(ViewCattles.this, CattleHome.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("cattleID",cattle.getCattleID());
 
-                intToHome.putExtras(bundle);
-                startActivity(intToHome);
-
+                intToCattleHome.putExtras(bundle);
+                startActivity(intToCattleHome);
 
             }
         });

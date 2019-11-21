@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,41 +26,45 @@ public class ViewVaccination extends AppCompatActivity {
     DatabaseReference databaseVaccine;
     ListView ListViewVaccine;
     List<Vaccine> vaccineList;
-    Button btnAddVaccine;
+    Button buttonAddVacc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_vaccination);
 
+        Bundle bundle = getIntent().getExtras();
 
 
-        btnAddVaccine = (Button) findViewById(R.id.buttonAddVacc);
+
+        buttonAddVacc = (Button)findViewById(R.id.buttonAddVacc);
 
 
-        databaseVaccine = FirebaseDatabase.getInstance().getReference("vaccine");
 
-        ListViewVaccine = (ListView) findViewById(R.id.listViewVaccine);
+        databaseVaccine= FirebaseDatabase.getInstance().getReference("vaccine");
 
-        vaccineList = new ArrayList<>();
+        ListViewVaccine= (ListView) findViewById(R.id.listViewVaccine);
 
-        btnAddVaccine.setOnClickListener(new View.OnClickListener() {
+        vaccineList=new ArrayList<>();
+
+        buttonAddVacc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intToAddVaccine = new Intent(ViewVaccination.this, AddVaccine.class);
                 startActivity(intToAddVaccine);
 
                 Bundle bundles = new Bundle();
-                String m = getCattleID();
-                bundles.putString("cattleID", m);
+                String m = getStuff();
+                bundles.putString("CattleID",m);
                 intToAddVaccine.putExtras(bundles);
                 startActivity(intToAddVaccine);
             }
         });
 
 
-    }
 
+
+    }
     @Override
     protected void onStart() {
         super.onStart();
@@ -66,16 +72,19 @@ public class ViewVaccination extends AppCompatActivity {
         databaseVaccine.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String k;
 
 
                 vaccineList.clear();
 
-                for (
-                        DataSnapshot vaccineSnapshot : dataSnapshot.getChildren()) {
+                for(
+                        DataSnapshot vaccineSnapshot :dataSnapshot.getChildren())
+
+                {
                     //getting farm
                     Vaccine vaccine = vaccineSnapshot.getValue(Vaccine.class);
-                    String k = getCattleID();
-                    if (vaccine.CattleVaccineID.equals(k)) {
+                    k= getStuff();
+                    if (vaccine.CattleVaccineID!=null && vaccine.CattleVaccineID.equals(k)) {
 
                         vaccineList.add(vaccine);
 
@@ -94,13 +103,14 @@ public class ViewVaccination extends AppCompatActivity {
             }
         });
     }
+    public  String getStuff() {
+        Bundle bundleVac = getIntent().getExtras();
 
-    public String getCattleID() {
-        Bundle bundle = getIntent().getExtras();
 
-
-        String stuff = bundle.getString("cattleID");
+        String stuff = bundleVac.getString("cattleID");
         return stuff;
-    }
-}
 
+
+    }
+
+}

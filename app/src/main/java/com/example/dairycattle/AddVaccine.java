@@ -74,10 +74,10 @@ public class AddVaccine extends AppCompatActivity {
             String VaccineID = databaseVaccine.push().getKey();
 
             //creating an Artist Object
-            Bundle bundle = getIntent().getExtras();
+            Bundle bundles = getIntent().getExtras();
 
 
-            String CattleVaccineID = bundle.getString("cattleID");
+            String CattleVaccineID = bundles.getString("CattleID");
             Vaccine vaccine = new Vaccine(VaccineID,CattleVaccineID,VaccineDate,VaccineClinicalSigns,VaccineTypeOfClinicalSign,VaccineKindOfDisease,VaccineTreatment,VaccineRemarks,VaccineNameOfVeterinarian);
             databaseVaccine.child(VaccineID).setValue(vaccine);
 
