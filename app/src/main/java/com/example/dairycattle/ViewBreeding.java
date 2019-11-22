@@ -18,43 +18,42 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewVaccination extends AppCompatActivity {
+public class ViewBreeding extends AppCompatActivity {
 
-    DatabaseReference databaseVaccine;
-    ListView ListViewVaccine;
-    List<Vaccine> vaccineList;
-    Button buttonAddVacc;
+    DatabaseReference databaseBreeding;
+    ListView ListViewBreeding;
+    List<Breeding> breedingList;
+    Button buttonAddBreeding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_vaccination);
+        setContentView(R.layout.activity_view_breeding);
 
         Bundle bundle = getIntent().getExtras();
 
 
 
-        buttonAddVacc = (Button)findViewById(R.id.buttonAddBreeding);
+        buttonAddBreeding = (Button)findViewById(R.id.buttonAddBreeding);
 
 
+        databaseBreeding= FirebaseDatabase.getInstance().getReference("breeding");
 
-        databaseVaccine= FirebaseDatabase.getInstance().getReference("vaccine");
+        ListViewBreeding= (ListView) findViewById(R.id.listViewBreeding);
 
-        ListViewVaccine= (ListView) findViewById(R.id.listViewDisease);
+        breedingList=new ArrayList<>();
 
-        vaccineList=new ArrayList<>();
-
-        buttonAddVacc.setOnClickListener(new View.OnClickListener() {
+        buttonAddBreeding.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intToAddVaccine = new Intent(ViewVaccination.this, AddVaccine.class);
-                startActivity(intToAddVaccine);
+                Intent intToAddBreeding = new Intent(ViewBreeding.this, AddBreeding.class);
+                startActivity(intToAddBreeding);
 
                 Bundle bundles = new Bundle();
                 String m = getStuff();
                 bundles.putString("CattleID",m);
-                intToAddVaccine.putExtras(bundles);
-                startActivity(intToAddVaccine);
+                intToAddBreeding.putExtras(bundles);
+                startActivity(intToAddBreeding);
             }
         });
 
@@ -66,32 +65,32 @@ public class ViewVaccination extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        databaseVaccine.addValueEventListener(new ValueEventListener() {
+        databaseBreeding.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String k;
 
 
-                vaccineList.clear();
+                breedingList.clear();
 
                 for(
-                        DataSnapshot vaccineSnapshot :dataSnapshot.getChildren())
+                        DataSnapshot breedingSnapshot :dataSnapshot.getChildren())
 
                 {
                     //getting farm
-                    Vaccine vaccine = vaccineSnapshot.getValue(Vaccine.class);
+                    Breeding breeding = breedingSnapshot.getValue(Breeding.class);
                     k= getStuff();
-                    if (vaccine.CattleVaccineID!=null && vaccine.CattleVaccineID.equals(k)) {
+                    if (breeding.BreedingCattleID!=null && breeding.BreedingCattleID.equals(k)) {
 
-                        vaccineList.add(vaccine);
+                        breedingList.add(breeding);
 
                     }
                     //adding farm to the list
 
                 }
 
-                VaccineList adapters = new VaccineList(ViewVaccination.this, vaccineList);
-                ListViewVaccine.setAdapter(adapters);
+                BreedingList adapters = new BreedingList(ViewBreeding.this, breedingList);
+                ListViewBreeding.setAdapter(adapters);
             }
 
             @Override
@@ -101,10 +100,9 @@ public class ViewVaccination extends AppCompatActivity {
         });
     }
     public  String getStuff() {
-        Bundle bundleVac = getIntent().getExtras();
+        Bundle bundleBreeding = getIntent().getExtras();
 
-
-        String stuff = bundleVac.getString("cattleID");
+        String stuff = bundleBreeding.getString("cattleID");
         return stuff;
 
 

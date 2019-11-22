@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(inToHome);
 
                             }
-
                         }
                     });
 
@@ -117,14 +116,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
-
     @Override
     protected void onStart() {
         super.onStart();
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
-
 
 }
