@@ -4,146 +4,141 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".addFarm">
+    tools:context=".ViewInfo">
 
-    <EditText
+    <TextView
         android:id="@+id/editTextCattleBreed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Cattle Breed" />
+
+        />
+
+
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"
-        android:text="Hello"
-        android:id="@+id/textViewTest"
-        />
-
-    <EditText
-        android:id="@+id/editTextCattleTagId"
+        android:id="@+id/TextViewCattleTagId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Cattle Tag ID" />
 
-    <EditText
-        android:id="@+id/editTextCattleDOB"
+         />
+
+    <TextView
+        android:id="@+id/TextViewCattleDOB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         android:ems="10"
-        android:inputType="date"
-        android:hint="CattleDOB" />
 
-    <EditText
-        android:id="@+id/editTextCattleSpeacialFeature"
+        />
+
+    <TextView
+        android:id="@+id/TextViewCattleSpeacialFeature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Cattle Speacial Feature" />
+         />
 
-    <EditText
-        android:id="@+id/editTextCattleSex"
+    <TextView
+        android:id="@+id/TextViewCattleSex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Cattle Sex" />
+      />
 
-    <EditText
-        android:id="@+id/editTextCattleNoOfLactation"
+    <TextView
+        android:id="@+id/TextViewCattleNoOfLactation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="300dp"
         android:ems="10"
-        android:inputType="number"
-        android:hint="No Of Lactation" />
 
-    <EditText
-        android:id="@+id/editTextFarmBirthWeight"
+         />
+
+    <TextView
+        android:id="@+id/TextViewFarmBirthWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="350dp"
         android:ems="10"
-        android:inputType="number"
-        android:hint="Birth Weight" />
 
-    <EditText
-        android:id="@+id/editTextCattleBreedingWeight"
+       />
+
+    <TextView
+        android:id="@+id/TextViewCattleBreedingWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="400dp"
         android:ems="10"
-        android:inputType="number"
-        android:hint="Breeding Weight" />
 
-    <EditText
-        android:id="@+id/editTextCattleWeaningWeight"
+        />
+
+    <TextView
+        android:id="@+id/TextViewCattleWeaningWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="450dp"
         android:ems="10"
-        android:inputType="number"
-        android:hint="Cattle Weaning Weight" />
 
-    <EditText
-        android:id="@+id/editTextCattleAveragePreWeaningGrowthRate"
+       />
+
+    <TextView
+        android:id="@+id/TextViewCattleAveragePreWeaningGrowthRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="500dp"
         android:ems="10"
-        android:inputType="number"
-        android:hint="Average Pre Weaning Growth Rate" />
 
-    <EditText
-        android:id="@+id/editTextCattleAveragePostWeaningGrowthRate"
+        />
+
+    <TextView
+        android:id="@+id/TextViewCattleAveragePostWeaningGrowthRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="550dp"
         android:ems="10"
-        android:inputType="number"
-        android:hint="Average Pre Weaning Growth Rate" />
 
-    <EditText
+      />
+
+    <TextView
         android:id="@+id/editTextCattleLastCalvingDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="600dp"
         android:ems="10"
-        android:inputType="date"
-        android:hint="Last Calving Date" />
 
-    <Button
-        android:id="@+id/btnAddCattle"
-        android:layout_width="60dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="500dp"
-        android:background="#24a0ed"
-        android:text="Add Cattle" />
+       />
+
+    <TextView
+        android:id="@+id/editTextCattleFarmName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="650dp"
+        android:ems="10"
+
+       />
+
 
 
 

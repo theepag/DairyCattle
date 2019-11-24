@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class addFarm extends AppCompatActivity {
 
-    EditText editTextFarmName,editTextFarmRegNo,editTextFarmOwnName,editTextFarmVetDiv,editTextFarmAddress,editTextFarmContactNo,editTextFarmCattleCount,editTextFarmDairyCattleCount;
+    EditText editTextFarmName,editTextFarmRegNo,editTextFarmOwnName,editTextFarmVetDiv,editTextFarmGSDiv,editTextFarmAddress,editTextFarmContactNo,editTextFarmCattleCount,editTextFarmDairyCattleCount;
     Button btnAddFarm2;
     DatabaseReference databaseFarm;
 
@@ -33,6 +33,7 @@ public class addFarm extends AppCompatActivity {
         editTextFarmRegNo = (EditText) findViewById(R.id.editTextFarmRegNo);
         editTextFarmOwnName = (EditText) findViewById(R.id.editTextFarmOwnName);
         editTextFarmVetDiv = (EditText) findViewById(R.id.editTextFarmVetDiv);
+        editTextFarmGSDiv= (EditText)findViewById(R.id.editTextFarmGSDiv);
         editTextFarmAddress = (EditText)findViewById(R.id.editTextFarmAddress);
         editTextFarmContactNo = (EditText) findViewById(R.id.editTextFarmContactNo);
         editTextFarmCattleCount = (EditText) findViewById(R.id.editTextFarmCattleCount);
@@ -58,6 +59,7 @@ public class addFarm extends AppCompatActivity {
         String FarmRegNo = editTextFarmRegNo.getText().toString().trim();
         String FarmOwnName = editTextFarmOwnName.getText().toString().trim();
         String FarmVetDiv = editTextFarmVetDiv.getText().toString().trim();
+        String FarmGSDiv = editTextFarmGSDiv.getText().toString().trim();
         String FarmAddress = editTextFarmAddress.getText().toString().trim();
         String FarmContactNo = editTextFarmContactNo.getText().toString().trim();
         String FarmCattleCount = editTextFarmCattleCount.getText().toString().trim();
@@ -69,7 +71,7 @@ public class addFarm extends AppCompatActivity {
             String id = databaseFarm.push().getKey();
 
             //creating an Artist Object
-            Farm farm = new Farm(id, FarmName,FarmRegNo,FarmOwnName,FarmVetDiv,FarmAddress,FarmContactNo,FarmCattleCount,FarmDairyCattleCount);
+            Farm farm = new Farm(id, FarmName,FarmRegNo,FarmOwnName,FarmVetDiv,FarmGSDiv,FarmAddress,FarmContactNo,FarmCattleCount,FarmDairyCattleCount);
             databaseFarm.child(id).setValue(farm);
 
             //setting edittext to blank again
@@ -83,6 +85,7 @@ public class addFarm extends AppCompatActivity {
 
 
         } else {
+
             //if the value is not given displaying a toast
             Toast.makeText(this, "Please fill the values", Toast.LENGTH_LONG).show();
         }

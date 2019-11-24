@@ -25,6 +25,8 @@ public class addCattle extends AppCompatActivity {
         setContentView(R.layout.activity_add_cattle);
 
 
+
+
         databaseCattle= FirebaseDatabase.getInstance().getReference("cattle");
 
 
@@ -61,8 +63,7 @@ public class addCattle extends AppCompatActivity {
 
     private void addCattle(){
 
-       // String CattleId= editTextCattleTagId.getText().toString().trim();
-        String CattleFarmId =  editTextCattleTagId.getText().toString().trim();
+        String CattleTAGID= editTextCattleTagId.getText().toString().trim();
         String CattleDateOfBirth = editTextCattleDOB.getText().toString().trim();
         String CattleBreed =editTextCattleBreed.getText().toString().trim();
         String CattleSpecialFeature = editTextCattleSpecialFeature.getText().toString().trim();
@@ -77,13 +78,18 @@ public class addCattle extends AppCompatActivity {
 
 
 
-        if (!TextUtils.isEmpty(CattleFarmId)||!TextUtils.isEmpty(CattleDateOfBirth)||!TextUtils.isEmpty(CattleBreed)||!TextUtils.isEmpty(CattleSpecialFeature)||!TextUtils.isEmpty(CattleSex)||!TextUtils.isEmpty(CattleNoOfLactation)||!TextUtils.isEmpty(CattleBirthWeight)) {
 
-            String id = databaseCattle.push().getKey();
+        if (!TextUtils.isEmpty(CattleDateOfBirth)||!TextUtils.isEmpty(CattleBreed)||!TextUtils.isEmpty(CattleSpecialFeature)||!TextUtils.isEmpty(CattleSex)||!TextUtils.isEmpty(CattleNoOfLactation)||!TextUtils.isEmpty(CattleBirthWeight)) {
+
+            String CattleID = databaseCattle.push().getKey();
 
             //creating an Artist Object
-            Cattle cattle = new Cattle(id,CattleFarmId,CattleDateOfBirth,CattleBreed,CattleSpecialFeature,CattleSex,CattleNoOfLactation,CattleBirthWeight,BreedingWeight,CattleWeaningWeight,CattleAveragePreWeaningGrowthRate,CattleAveragePostWeaningGrowthRate,CattleLastCalvingDate);
-            databaseCattle.child(id).setValue(cattle);
+            Bundle bundle = getIntent().getExtras();
+
+
+            String FarmID = bundle.getString("farmid");
+            Cattle cattle = new Cattle(CattleID,CattleTAGID,FarmID,CattleDateOfBirth,CattleBreed,CattleSpecialFeature,CattleSex,CattleNoOfLactation,CattleBirthWeight,BreedingWeight,CattleWeaningWeight,CattleAveragePreWeaningGrowthRate,CattleAveragePostWeaningGrowthRate,CattleLastCalvingDate);
+            databaseCattle.child(CattleID).setValue(cattle);
 
             //setting edittext to blank again
 

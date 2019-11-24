@@ -31,7 +31,7 @@ public class CattleList extends ArrayAdapter<Cattle> {
         TextView textViewCattleBreed = listViewItem.findViewById(R.id.textViewCattleBreed);
 
         Cattle cattle = cattleList.get(position);
-        textViewCattleId.setText(cattle.getCattleId());
+        textViewCattleId.setText(cattle.getCattleID());
         textViewCattleBreed.setText(cattle.getCattleBreed());
 
 

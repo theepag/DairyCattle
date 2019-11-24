@@ -8,6 +8,7 @@ public class Farm {
     String FarmRegNo;
     String FarmOwnName;
     String FarmVetDiv;
+    String FarmGSDiv;
     String FarmAddress;
     String FarmContactNo;
     String FarmCattleCount;
@@ -18,12 +19,13 @@ public class Farm {
 
     }
 
-    public Farm(String farmId, String farmName, String farmRegNo, String farmOwnName, String farmVetDiv, String farmAddress, String farmContactNo, String farmCattleCount, String farmDairyCattleCount) {
+    public Farm(String farmId, String farmName, String farmRegNo, String farmOwnName, String farmVetDiv, String farmGSDiv, String farmAddress, String farmContactNo, String farmCattleCount, String farmDairyCattleCount) {
         FarmId = farmId;
         FarmName = farmName;
         FarmRegNo = farmRegNo;
         FarmOwnName = farmOwnName;
         FarmVetDiv = farmVetDiv;
+        FarmGSDiv = farmGSDiv;
         FarmAddress = farmAddress;
         FarmContactNo = farmContactNo;
         FarmCattleCount = farmCattleCount;
@@ -48,6 +50,10 @@ public class Farm {
 
     public String getFarmVetDiv() {
         return FarmVetDiv;
+    }
+
+    public String getFarmGSDiv() {
+        return FarmGSDiv;
     }
 
     public String getFarmAddress() {
@@ -84,6 +90,10 @@ public class Farm {
 
     public void setFarmVetDiv(String farmVetDiv) {
         FarmVetDiv = farmVetDiv;
+    }
+
+    public void setFarmGSDiv(String farmGSDiv) {
+        FarmGSDiv = farmGSDiv;
     }
 
     public void setFarmAddress(String farmAddress) {

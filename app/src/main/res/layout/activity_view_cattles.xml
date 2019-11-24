@@ -8,48 +8,142 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/FarmName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="163dp"
         android:layout_marginLeft="163dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="190dp"
         android:layout_marginRight="190dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/ListViewCattle"
-        android:layout_width="409dp"
-        android:layout_height="559dp"
+        android:layout_width="411dp"
+        android:layout_height="416dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
-        android:layout_marginTop="23dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAddCattle" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonAddCattle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="107dp"
+        android:layout_height="47dp"
         android:layout_marginStart="161dp"
         android:layout_marginLeft="161dp"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="162dp"
         android:layout_marginRight="162dp"
-        android:layout_marginBottom="23dp"
         android:text="Add Cattle"
-        app:layout_constraintBottom_toTopOf="@+id/ListViewCattle"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/FarmName" />
+
+    <TextView
+        android:id="@+id/farmRegNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="119dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/farmOwnName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="47dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="17dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/farmRegNo"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddCattle" />
+
+    <TextView
+        android:id="@+id/farmVetDiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="17dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/farmOwnName"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddCattle" />
+
+    <TextView
+        android:id="@+id/farmAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="117dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/farmVetDiv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/farmContactNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="128dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/ListViewCattle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/farmRegNo" />
+
+    <TextView
+        android:id="@+id/farmCattleCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="51dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="128dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/ListViewCattle"
+        app:layout_constraintStart_toEndOf="@+id/farmContactNo"
+        app:layout_constraintTop_toBottomOf="@+id/farmOwnName" />
+
+    <TextView
+        android:id="@+id/farmDairyCattleCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="130dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/ListViewCattle"
+        app:layout_constraintStart_toEndOf="@+id/farmCattleCount"
+        app:layout_constraintTop_toBottomOf="@+id/farmVetDiv" />
+
+    <TextView
+        android:id="@+id/farmGSDiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="131dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/ListViewCattle"
+        app:layout_constraintStart_toEndOf="@+id/farmDairyCattleCount"
+        app:layout_constraintTop_toBottomOf="@+id/farmAddress" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

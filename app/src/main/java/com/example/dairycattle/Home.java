@@ -41,6 +41,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
         databaseFarms= FirebaseDatabase.getInstance().getReference("farms");
         btnLogout = (Button) findViewById(R.id.logout);
         buttonAddFarm = (Button)findViewById(R.id.addFarm);
@@ -62,7 +63,8 @@ public class Home extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int i, long l) {
                 Farm farm = farmList.get(i);
-                updateFarmDetail(farm.getFarmId(),farm.getFarmName(),farm.getFarmRegNo(),farm.getFarmOwnName(),farm.getFarmVetDiv(),farm.getFarmAddress(),farm.getFarmContactNo(),farm.getFarmCattleCount(),farm.getFarmDairyCattleCount());
+                updateFarmDetail(farm.getFarmId(),farm.getFarmName(),farm.getFarmRegNo(),farm.getFarmOwnName(),farm.getFarmVetDiv(),farm.getFarmGSDiv(),farm.getFarmAddress(),farm.getFarmContactNo(),farm.getFarmCattleCount(),farm.getFarmDairyCattleCount());
+
 
                 return true;
 
@@ -74,13 +76,28 @@ public class Home extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
 
-                Farm farm = farmList.get(i);
-                showFarmDetail(farm.getFarmName(),farm.getFarmRegNo(),farm.getFarmOwnName(),farm.getFarmVetDiv(),farm.getFarmAddress(),farm.getFarmContactNo(),farm.getFarmCattleCount(),farm.getFarmDairyCattleCount());
+               Farm farm = farmList.get(i);
+             //  showFarmDetail(farm.getFarmName(),farm.getFarmRegNo(),farm.getFarmOwnName(),farm.getFarmVetDiv(),farm.getFarmGSDiv(),farm.getFarmAddress(),farm.getFarmContactNo(),farm.getFarmCattleCount(),farm.getFarmDairyCattleCount());
 
+                Intent intToHome = new Intent(Home.this, ViewCattles.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("stuff",farm.getFarmId());
+                bundle.putString("fameName",farm.getFarmName());
+                bundle.putString("farmRegNo",farm.getFarmRegNo());
+                bundle.putString("farmOwnName",farm.getFarmOwnName());
+                bundle.putString("farmGSDiv",farm.getFarmGSDiv());
+                bundle.putString("farmAddress",farm.getFarmAddress());
+                bundle.putString("farmContactNo",farm.getFarmId());
+                bundle.putString("farmCattleCount",farm.getFarmCattleCount());
+                bundle.putString("farmDairyCattleCount",farm.getFarmDairyCattleCount());
+
+                intToHome.putExtras(bundle);
+                startActivity(intToHome);
 
 
             }
         });
+
 
 
 
@@ -134,9 +151,9 @@ public class Home extends AppCompatActivity {
     }
 
 
+/*
 
-
-    private void showFarmDetail(String Name, String RegNo, String OwnName, String VetDiv , String Address, String ContactNo, String CattleCount, String DairyCattleCount){
+    private void showFarmDetail(String Name, String RegNo, String OwnName, String VetDiv ,String GSDiv, String Address, String ContactNo, String CattleCount, String DairyCattleCount){
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         LayoutInflater inflater = getLayoutInflater();
@@ -149,6 +166,7 @@ public class Home extends AppCompatActivity {
         final TextView editTextRegNo = (TextView) dialogView.findViewById(R.id.farmRegNo);
         final TextView editTextOwnName = (TextView) dialogView.findViewById(R.id.farmOwnName);
         final TextView editTextVetDiv = (TextView) dialogView.findViewById(R.id.farmVetDiv);
+        final TextView editTextViewGSDiv = (TextView) dialogView.findViewById(R.id.farmGSDiv);
         final TextView editTextAddress = (TextView) dialogView.findViewById(R.id.farmAddress);
         final TextView editTextContactNo = (TextView) dialogView.findViewById(R.id.farmContactNo);
         final TextView editTextCattleCount = (TextView) dialogView.findViewById(R.id.farmCattleCount);
@@ -158,6 +176,7 @@ public class Home extends AppCompatActivity {
         editTextRegNo.setText(RegNo);
         editTextOwnName.setText(OwnName);
         editTextVetDiv.setText(VetDiv);
+        editTextViewGSDiv.setText(GSDiv);
         editTextAddress.setText(Address);
         editTextCattleCount.setText(CattleCount);
         editTextDairyCattleCount.setText(DairyCattleCount);
@@ -169,9 +188,9 @@ public class Home extends AppCompatActivity {
         alertDialog.show();
 
 
-    }
+    } */
 
-    private void updateFarmDetail(final String ID, String Name, String RegNo, String OwnName, String VetDiv , String Address, String ContactNo, String CattleCount, String DairyCattleCount){
+    private void updateFarmDetail(final String ID, String Name, String RegNo, String OwnName, String VetDiv ,String GSDiv ,String Address, String ContactNo, String CattleCount, String DairyCattleCount){
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         LayoutInflater inflater = getLayoutInflater();
@@ -184,6 +203,7 @@ public class Home extends AppCompatActivity {
         final EditText editTextRegNo = (EditText) dialogView.findViewById(R.id.editTextRegNo);
         final EditText editTextOwnName = (EditText) dialogView.findViewById(R.id.editTextOwnName);
         final EditText editTextVetDiv = (EditText) dialogView.findViewById(R.id.editTextVetDiv);
+        final EditText editTextGSDiv = (EditText) dialogView.findViewById(R.id.editTextGSDiv);
         final EditText editTextAddress = (EditText) dialogView.findViewById(R.id.editTextAddress);
         final EditText editTextContactNo = (EditText) dialogView.findViewById(R.id.editTextContactNo);
         final EditText editTextCattleCount = (EditText) dialogView.findViewById(R.id.editTextCattleCount);
@@ -195,6 +215,7 @@ public class Home extends AppCompatActivity {
         editTextRegNo.setText(RegNo);
         editTextOwnName.setText(OwnName);
         editTextVetDiv.setText(VetDiv);
+        editTextGSDiv.setText(GSDiv);
         editTextAddress.setText(Address);
         editTextCattleCount.setText(CattleCount);
         editTextDairyCattleCount.setText(DairyCattleCount);
@@ -208,13 +229,14 @@ public class Home extends AppCompatActivity {
                 String RegNo = editTextRegNo.getText().toString().trim();
                 String OwnName = editTextOwnName.getText().toString().trim();
                 String VetDiv = editTextVetDiv.getText().toString().trim();
+                String GSDiv = editTextGSDiv.getText().toString().trim();
                 String Address = editTextAddress.getText().toString().trim();
                 String ContactNo = editTextContactNo.getText().toString().trim();
                 String CattleCount = editTextCattleCount.getText().toString().trim();
                 String DairyCattleCount = editTextDairyCattleCount.getText().toString().trim();
 
 
-                updateFarm(ID,Name,RegNo,OwnName,VetDiv,Address,ContactNo,CattleCount,DairyCattleCount);
+                updateFarm(ID,Name,RegNo,OwnName,VetDiv,GSDiv,Address,ContactNo,CattleCount,DairyCattleCount);
 
             }
         });
@@ -225,8 +247,9 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intToHome = new Intent(Home.this, ViewCattles.class);
-                startActivity(intToHome);
+
+
+
 
 
             }
@@ -243,10 +266,10 @@ public class Home extends AppCompatActivity {
     }
 
 
-    private boolean updateFarm(String ID,String Name, String RegNo, String OwnName, String VetDiv , String Address, String ContactNo, String CattleCount, String DairyCattleCount){
+    private boolean updateFarm(String ID,String Name, String RegNo, String OwnName, String VetDiv, String GSDiv, String Address, String ContactNo, String CattleCount, String DairyCattleCount){
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("farms").child(ID);
-        Farm farm = new Farm(ID,Name,RegNo,OwnName,VetDiv,Address,ContactNo,CattleCount, DairyCattleCount);
+        Farm farm = new Farm(ID,Name,RegNo,OwnName,VetDiv,GSDiv,Address,ContactNo,CattleCount, DairyCattleCount);
         databaseReference.setValue(farm);
         Toast.makeText(this, "Farm Updated Successfully", Toast.LENGTH_LONG).show();
 
