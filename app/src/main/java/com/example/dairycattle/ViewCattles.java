@@ -108,6 +108,20 @@ public class ViewCattles extends AppCompatActivity {
                 Intent intToCattleHome = new Intent(ViewCattles.this, CattleHome.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("cattleID",cattle.getCattleID());
+                bundle.putString("CattleTAGID",cattle.getCattleTAGID());
+                bundle.putString("CattleFarmID",cattle.getCattleFarmID());
+                bundle.putString("CattleDateOfBirth",cattle.getCattleDateOfBirth());
+                bundle.putString("CattleBreed",cattle.getCattleBreed());
+                bundle.putString("CattleSpecialFeature",cattle.getCattleSpecialFeature());
+                bundle.putString("CattleSex",cattle.getCattleSex());
+                bundle.putString("CattleBirthWeight",cattle.getCattleBirthWeight());
+                bundle.putString("BreedingWeight",cattle.getBreedingWeight());
+                bundle.putString("CattleWeaningWeight",cattle.getCattleWeaningWeight());
+                bundle.putString("CattleAveragePreWeaningGrowthRate",cattle.getCattleAveragePreWeaningGrowthRate());
+                bundle.putString("CattleAveragePostWeaningGrowthRate",cattle.getCattleAveragePostWeaningGrowthRate());
+                bundle.putString("CattleLastCalvingDate",cattle.getCattleLastCalvingDate());
+
+
 
                 intToCattleHome.putExtras(bundle);
                 startActivity(intToCattleHome);
