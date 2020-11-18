@@ -21,8 +21,8 @@ An Android application to manage cattles
 
 ## Add Vacci Screen
 
-<img src="./app/src/main/res/drawable/Screens/addVacci.jpeg" alt="drawing" width="300"/>
+<img src="./app/src/main/res/drawable/Screens/addvacci.jpeg" alt="drawing" width="300"/>
 
 ## Add Cattle Screen
 
-<img src="./app/src/main/res/drawable/Screens/addCattle.jpeg" alt="drawing" width="300"/>
+<img src="./app/src/main/res/drawable/Screens/addcattle.jpeg" alt="drawing" width="300"/>
